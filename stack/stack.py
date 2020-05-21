@@ -1,7 +1,7 @@
 
+import DoublyLinkedList
 import sys
 sys.path.append('../doubly_linked_list')
-
 
 """
 A stack is a data structure whose primary purpose is to store and
@@ -19,25 +19,25 @@ return elements in Last In First Out order.
 # This is the implementation with arrays, changed name of class for test_stack.py to not run on it
 
 
-class StackWithArrays:
-    def __init__(self):
-        self.size = 0
-        # set self.storage as a python list(dynamic array)
-        self.storage = []
+# class StackWithArrays:
+#     def __init__(self):
+#         self.size = 0
+#         # set self.storage as a python list(dynamic array)
+#         self.storage = []
 
-    def __len__(self):
-        # use len() python inbuilt function to return length of the list
-        return len(self.storage)
+#     def __len__(self):
+#         # use len() python inbuilt function to return length of the list
+#         return len(self.storage)
 
-    def push(self, value):
-        # append will add this new value to the end of the list effectively at the top of the stack since inbuilt pop()
-        # will return value from the end of the list
-        self.storage.append(value)
+#     def push(self, value):
+#         # append will add this new value to the end of the list effectively at the top of the stack since inbuilt pop()
+#         # will return value from the end of the list
+#         self.storage.append(value)
 
-    def pop(self):
-        if not len(self.storage):  # or if len(self.storage) == 0
-            return None
-        return self.storage.pop()
+#     def pop(self):
+#         if not len(self.storage):  # or if len(self.storage) == 0
+#             return None
+#         return self.storage.pop()
 
 
 class Stack:
@@ -56,4 +56,4 @@ class Stack:
         if self.size == 0:  # or not self.size
             return None
         self.size -= 1
-        return self.storage.remove_tail()
+        return self.storage.remove_from_tail()
