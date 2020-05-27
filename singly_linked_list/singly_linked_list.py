@@ -30,3 +30,6 @@
 #     def remove_head(self):
 
 #     def get_max(self):
+
+
+"""Each ListNode holds a reference to its next node in the List."""
