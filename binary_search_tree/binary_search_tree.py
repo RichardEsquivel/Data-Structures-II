@@ -9,6 +9,18 @@ on the BSTNode class.
 2. Implement the `in_order_print`, `bft_print`, and `dft_print` methods
 on the BSTNode class.
 """
+
+stack_path = os.path.normpath(
+    os.path.join(__file__, "../../stack")
+)
+sys.path.append(stack_path)
+from stack import Stack
+
+queue_path = os.path.normpath(
+    os.path.join(__file__, "../../queue")
+)
+sys.path.append(queue_path)
+from queue import Queue
 class BSTNode:
     def __init__(self, value):
         self.value = value
@@ -19,11 +31,24 @@ class BSTNode:
     def insert(self, value):
         #check if new passed in node value is less than current node's value
         if value < self.value
-        #if the value is less and there is no node present already to the left of this node
-        #than we contains
-        # False if it does not
+            #if the value is less and there is no node present already to the left of this node
+            #than we place that node here instantiate an instance of the BST class here
+            if not self.left:
+                self.left= BSTNode(value)
+            else:
+        #if there is a node there continue to check the next left to see if there is a node,
+        #you do this until there is a spot to place this new value
+                self.left.insert(value)
+        elif value >= value:
+            if not self.right:
+                self.right= BSTNode(value)
+            else:
+                self.right.insert(value)
+
+
+
     def contains(self, target):
-        if tesxt
+        if 
 
     # Return the maximum value found in the tree
     def get_max(self):
